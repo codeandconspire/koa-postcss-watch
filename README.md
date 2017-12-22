@@ -2,9 +2,9 @@
 
 # koa-postcss-watch 🏓
 
-[![npm version]([0])]([1]) [![build status]([2])]([3])
-[![downloads]([4])]([5])
-[![style]([6])]([7])
+[![npm version][0]][1] [![build status][2]][3]
+[![downloads][4]][5]
+[![style][6]][7]
 
 Be lazy. Watch and process css on the fly with PostCSS.
 
