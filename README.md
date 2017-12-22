@@ -45,7 +45,7 @@ app.listen(process.env.PORT)
 
 ## API
 
-### `koaPostcss([opts])`
+### `watch([opts])`
 
 Create a middleware function. If `opts.file` is not defined, path to file will be resolved to `ctx.path` relative to `opts.root` or `process.cwd()`.
 
