@@ -31,6 +31,7 @@ function middleware (opts) {
 // (str, obj) -> obj
 function watch (file, opts) {
   var plugins = opts.plugins || []
+  var watcher = new Watcher(opts)
   var bundle = postcss(plugins.concat(watcher.plugin()))
 
   // ensure absolute file paths
@@ -38,11 +39,11 @@ function watch (file, opts) {
 
   var cache = {
     file: file,
-    watcher: new Watcher(opts),
+    watcher: watcher,
     processing: process(file)
   }
 
-  cache.watcher.on('change', function {
+  cache.watcher.on('change', function () {
     cache.processing = process(file, bundle)
   })
 
