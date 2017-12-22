@@ -1,6 +1,6 @@
 {
   "name": "koa-postcss-watch",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Koa middleware for processing css on the fly",
   "main": "index.js",
   "scripts": {
