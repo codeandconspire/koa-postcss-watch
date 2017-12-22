@@ -1,6 +1,6 @@
 <div align="center">
 
-# koa-postcss 🏓
+# koa-postcss-watch 🏓
 
 [![npm version]([0])]([1]) [![build status]([2])]([3])
 [![downloads]([4])]([5])
@@ -15,11 +15,11 @@ Be lazy. Watch and process css on the fly with PostCSS.
 ```javascript
 var Koa = require('koa')
 var mount = require('koa-mount')
-var koaPostcss = require('koa-postcss')
+var watch = require('koa-postcss-watch')
 var app = new Koa()
 
 if (process.env.NODE_ENV === 'development') {
-  app.use(mount('/bundle.css', koaPostcss({
+  app.use(mount('/bundle.css', watch({
     file: 'lib/index.css',
     plugins: [require('postcss-import'), require('autoprefixer')]
   })))
@@ -60,18 +60,18 @@ Options are forwarded to both [chokidar](https://github.com/paulmillr/chokidar) 
 ## Install
 
 ```bash
-$ npm install -S koa-postcss
+$ npm install -S koa-postcss-watch
 ```
 
 ## License
 
 MIT
 
-[0]: https://img.shields.io/npm/v/koa-postcss.svg?style=flat-square
-[1]: https://npmjs.org/package/koa-postcss
-[2]: https://img.shields.io/travis/codeandconspire/koa-postcss/master.svg?style=flat-square
-[3]: https://travis-ci.org/codeandconspire/koa-postcss
-[4]: http://img.shields.io/npm/dm/koa-postcss.svg?style=flat-square
-[5]: https://npmjs.org/package/koa-postcss
+[0]: https://img.shields.io/npm/v/koa-postcss-watch.svg?style=flat-square
+[1]: https://npmjs.org/package/koa-postcss-watch
+[2]: https://img.shields.io/travis/codeandconspire/koa-postcss-watch/master.svg?style=flat-square
+[3]: https://travis-ci.org/codeandconspire/koa-postcss-watch
+[4]: http://img.shields.io/npm/dm/koa-postcss-watch.svg?style=flat-square
+[5]: https://npmjs.org/package/koa-postcss-watch
 [6]: https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat-square
 [7]: https://standardjs.com

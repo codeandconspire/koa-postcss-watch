@@ -12,7 +12,7 @@ module.exports = middleware
 function middleware (opts) {
   opts = opts || {}
 
-  assert(!opts.plugin || Array.isArray(opts.plugins), 'koa-postcss: opts.plugins must be an array')
+  assert(!opts.plugin || Array.isArray(opts.plugins), 'koa-postcss-watch: opts.plugins must be an array')
 
   var cache = {}
 
