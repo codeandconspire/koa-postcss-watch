@@ -27,6 +27,6 @@
   },
   "dependencies": {
     "postcss": "^6.0.14",
-    "postcss-watcher": "^1.0.0"
+    "postcss-watcher": "^1.0.4"
   }
 }
