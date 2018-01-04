@@ -38,7 +38,7 @@ function watch (file, opts) {
   var bundle = postcss(plugins.concat(watcher.plugin()))
 
   // ensure absolute file paths
-  if (!path.isAbsolute(file)) file = path.resolve(process.cwd(), file)
+  if (!path.isAbsolute(file)) file = path.resolve(file)
 
   var cache = {
     file: file,
