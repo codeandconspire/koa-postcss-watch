@@ -20,10 +20,13 @@ function middleware (opts) {
 
   return async function (ctx, next) {
     ctx.type = 'text/css'
-    if (opts.file) return cache[opts.file].processing
-    var file = path.resolve(opts.root || process.cwd(), format(ctx.path))
+    if (opts.file) {
+      ctx.body = await cache[opts.file].processing
+    } else {
+      var file = path.resolve(opts.root || '', format(ctx.path))
     if (!cache[file]) cache[file] = watch(file, opts)
-    return cache[file].processing
+      ctx.body = await cache[file].processing
+    }
   }
 }
 
