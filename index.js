@@ -43,7 +43,7 @@ function watch (file, opts) {
   var cache = {
     file: file,
     watcher: watcher,
-    processing: process(file)
+    processing: process(file, bundle)
   }
 
   cache.watcher.on('change', function () {
