@@ -24,7 +24,7 @@ function middleware (opts) {
       ctx.body = await cache[opts.file].processing
     } else {
       var file = path.resolve(opts.root || '', format(ctx.path))
-    if (!cache[file]) cache[file] = watch(file, opts)
+      if (!cache[file]) cache[file] = watch(file, opts)
       ctx.body = await cache[file].processing
     }
   }
@@ -57,7 +57,7 @@ function watch (file, opts) {
 // str -> Promise
 function process (file, bundle) {
   return readFile(file, 'utf8').then(function (content) {
-    bundle.process(content, { from: file }).then(function (result) {
+    return bundle.process(content, { from: file }).then(function (result) {
       return result.css
     })
   })
